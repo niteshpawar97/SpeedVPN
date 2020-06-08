@@ -182,7 +182,7 @@ public class MainActivity extends UIActivity implements TrafficListener, VpnStat
                         public void complete() {
                             hideConnectProgress();
                             startUIUpdateTask();
-//                            LoadInterstitialAd();
+                           LoadInterstitialAd();
                         }
 
                         @Override
@@ -212,10 +212,10 @@ public class MainActivity extends UIActivity implements TrafficListener, VpnStat
             public void complete() {
                 hideConnectProgress();
                 stopUIUpdateTask();
-//                LoadInterstitialAd();
+               LoadInterstitialAd();
                 InterstitialAd mInterstitialAd;
                 if (!preference.isBooleenPreference(Constant.PRIMIUM_STATE)) {
-                    mInterstitialAd = new InterstitialAd(getApplicationContext());
+                    /*mInterstitialAd = new InterstitialAd(getApplicationContext());
                     mInterstitialAd.setAdUnitId(BuildConfig.GOOGLE_INTERSTITIAL);
                     mInterstitialAd.loadAd(new AdRequest.Builder().build());
                     mInterstitialAd.setAdListener(new AdListener() {
@@ -255,7 +255,7 @@ public class MainActivity extends UIActivity implements TrafficListener, VpnStat
                             finish();
                             // Code to be executed when the interstitial ad is closed.
                         }
-                    });
+                    });*/
 
                 }
             }

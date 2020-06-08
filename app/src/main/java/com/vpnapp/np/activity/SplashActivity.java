@@ -11,12 +11,14 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.facebook.ads.AdError;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.vpnapp.np.BuildConfig;
 import com.vpnapp.np.Preference;
 import com.vpnapp.np.R;
+import com.vpnapp.np.utils.AdModFacebook;
 import com.vpnapp.np.utils.Constant;
 import com.vpnapp.np.utils.NetworkState;
 
@@ -54,6 +56,50 @@ public class SplashActivity extends AppCompatActivity {
 
         Preference preference = new Preference(getApplicationContext());
         if (!preference.isBooleenPreference(Constant.PRIMIUM_STATE)) {
+            /*if (BuildConfig.FACEBOOK_AD) {
+                AdModFacebook.buildAdFullScreen(getApplicationContext(), new AdModFacebook.MyAdListener() {
+                    @Override
+                    public void onAdClicked() {
+                    }
+
+                    @Override
+                    public void onAdClosed() {
+                        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(myIntent);
+                        finish();
+                        // Code to be executed when the interstitial ad is closed.
+                    }
+
+                    @Override
+                    public void onAdLoaded() {
+                    }
+
+                    @Override
+                    public void onAdOpened() {
+                    }
+
+                    @Override
+                    public void onFaildToLoad(AdError adError) {
+                        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(myIntent);
+                        finish();
+                        // Code to be executed when an ad request fails.
+                    }
+
+                    @Override
+                    public void onInterstitialDismissed() {
+                    }
+
+                    @Override
+                    public void onInterstitialDisplayed() {
+                    }
+
+                    @Override
+                    public void onLoggingImpression() {
+                    }
+                });
+            }
+            /*
             mInterstitialAd = new InterstitialAd(this);
             mInterstitialAd.setAdUnitId(BuildConfig.GOOGLE_INTERSTITIAL);
             mInterstitialAd.loadAd(new AdRequest.Builder().build());
@@ -93,7 +139,7 @@ public class SplashActivity extends AppCompatActivity {
                     finish();
                     // Code to be executed when the interstitial ad is closed.
                 }
-            });
+            });*/
 
         }
         if (NetworkState.isOnline(this)) {
@@ -102,9 +148,10 @@ public class SplashActivity extends AppCompatActivity {
                 public void run() {
                     runOnUiThread(new Runnable() {
                         @Override public void run() {
-                            if (mInterstitialAd.isLoaded()) {
+                            /*if (mInterstitialAd.isLoaded()) {
                                 mInterstitialAd.show();
-                            } else {
+                            } else
+                                */ {
                                 Log.d("TAG", "The interstitial wasn't loaded yet.");
                                 Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
                                 startActivity(myIntent);

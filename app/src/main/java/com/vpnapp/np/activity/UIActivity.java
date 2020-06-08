@@ -216,7 +216,7 @@ public abstract class UIActivity extends AppCompatActivity implements View.OnCli
             lin_spped.setVisibility(View.VISIBLE);
         }
         MobileAds.initialize(getApplicationContext(), getString(R.string.admob_app_ID));
-//        LoadInterstitialAd();
+       LoadInterstitialAd();
         LoadBannerAd();
     }
 
@@ -344,7 +344,7 @@ public abstract class UIActivity extends AppCompatActivity implements View.OnCli
             lay_pro.setVisibility(View.GONE);
             lin_spped.setVisibility(View.VISIBLE);
             MobileAds.initialize(this, getString(R.string.admob_app_ID));
-//            LoadInterstitialAd();
+           LoadInterstitialAd();
             LoadBannerAd();
         }
 
@@ -485,7 +485,7 @@ public abstract class UIActivity extends AppCompatActivity implements View.OnCli
 
     @OnClick(R.id.optimal_server_btn)
     public void onServerChooserClick(View v) {
-//        LoadInterstitialAd();
+        LoadInterstitialAd();
         chooseServer();
     }
 
@@ -722,65 +722,65 @@ public abstract class UIActivity extends AppCompatActivity implements View.OnCli
         Toast.makeText(UIActivity.this, msg, Toast.LENGTH_SHORT).show();
     }
 
-//    public void LoadInterstitialAd() {
-//        if (BuildConfig.GOOGlE_AD) {
-//            AdMod.buildAdFullScreen(getApplicationContext(), new AdMod.MyAdListener() {
-//                @Override
-//                public void onAdClicked() {
-//                }
-//
-//                @Override
-//                public void onAdClosed() {
-//                }
-//
-//                @Override
-//                public void onAdLoaded() {
-//                }
-//
-//                @Override
-//                public void onAdOpened() {
-//                }
-//
-//                @Override
-//                public void onFaildToLoad(int i) {
-//                }
-//            });
-//        } else if (BuildConfig.FACEBOOK_AD) {
-//            AdModFacebook.buildAdFullScreen(getApplicationContext(), new AdModFacebook.MyAdListener() {
-//                @Override
-//                public void onAdClicked() {
-//                }
-//
-//                @Override
-//                public void onAdClosed() {
-//                }
-//
-//                @Override
-//                public void onAdLoaded() {
-//                }
-//
-//                @Override
-//                public void onAdOpened() {
-//                }
-//
-//                @Override
-//                public void onFaildToLoad(AdError adError) {
-//                }
-//
-//                @Override
-//                public void onInterstitialDismissed() {
-//                }
-//
-//                @Override
-//                public void onInterstitialDisplayed() {
-//                }
-//
-//                @Override
-//                public void onLoggingImpression() {
-//                }
-//            });
-//        }
-//    }
+    public void LoadInterstitialAd() {
+        if (BuildConfig.GOOGlE_AD) {
+            AdMod.buildAdFullScreen(getApplicationContext(), new AdMod.MyAdListener() {
+                @Override
+                public void onAdClicked() {
+                }
+
+                @Override
+                public void onAdClosed() {
+                }
+
+                @Override
+                public void onAdLoaded() {
+                }
+
+                @Override
+                public void onAdOpened() {
+                }
+
+                @Override
+                public void onFaildToLoad(int i) {
+                }
+            });
+        } else if (BuildConfig.FACEBOOK_AD) {
+            AdModFacebook.buildAdFullScreen(getApplicationContext(), new AdModFacebook.MyAdListener() {
+                @Override
+                public void onAdClicked() {
+                }
+
+                @Override
+                public void onAdClosed() {
+                }
+
+                @Override
+                public void onAdLoaded() {
+                }
+
+                @Override
+                public void onAdOpened() {
+                }
+
+                @Override
+                public void onFaildToLoad(AdError adError) {
+                }
+
+                @Override
+                public void onInterstitialDismissed() {
+                }
+
+                @Override
+                public void onInterstitialDisplayed() {
+                }
+
+                @Override
+                public void onLoggingImpression() {
+                }
+            });
+        }
+    }
 
     public void LoadBannerAd() {
         RelativeLayout adContainer = findViewById(R.id.adView);

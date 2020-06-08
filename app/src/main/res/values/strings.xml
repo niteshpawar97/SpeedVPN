@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NP VPN</string>
+    <string name="app_name">Anti VPN</string>
     <string name="admob_app_ID">ca-app-pub-3940256099942544~1896688107</string>
 
     <string name="vpn_process_name" translatable="false">:my.custom.vpn.process.name</string>

@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.google.android.gms.ads.InterstitialAd;
 import com.vpnapp.np.BuildConfig;
 import com.vpnapp.np.Preference;
 import com.google.android.gms.ads.AdListener;
@@ -64,44 +65,44 @@ public class AdMod {
         }
     }
 
-//    public static void buildAdFullScreen(Context context, final MyAdListener myAdListener) {
-//        Preference preference = new Preference(context);
-//        if (!preference.isBooleenPreference(Constant.PRIMIUM_STATE)) {
-//            final InterstitialAd interstitialAd = new InterstitialAd(context);
-//            interstitialAd.setAdUnitId(BuildConfig.GOOGLE_INTERSTITIAL);
-//            AdRequest build = new AdRequest.Builder().build();
-//            interstitialAd.setAdListener(new com.google.android.gms.ads.AdListener() {
-//                public void onAdClosed() {
-//                    myAdListener.onAdClosed();
-//                    super.onAdClosed();
-//                }
-//
-//                public void onAdFailedToLoad(int i) {
-//                    super.onAdFailedToLoad(i);
-//                }
-//
-//                public void onAdLoaded() {
-//                    if (interstitialAd == null || !interstitialAd.isLoaded()) {
-//                    } else {
-//                        interstitialAd.show();
-//                    }
-//                    super.onAdLoaded();
-//                }
-//
-//                public void onAdClicked() {
-//                    myAdListener.onAdClicked();
-//                    super.onAdClicked();
-//                }
-//
-//                @Override
-//                public void onAdOpened() {
-//                    myAdListener.onAdOpened();
-//                    super.onAdOpened();
-//                }
-//            });
-//            interstitialAd.loadAd(build);
-//        }
-//    }
+    public static void buildAdFullScreen(Context context, final MyAdListener myAdListener) {
+        Preference preference = new Preference(context);
+        if (!preference.isBooleenPreference(Constant.PRIMIUM_STATE)) {
+            final InterstitialAd interstitialAd = new InterstitialAd(context);
+            interstitialAd.setAdUnitId(BuildConfig.GOOGLE_INTERSTITIAL);
+            AdRequest build = new AdRequest.Builder().build();
+            interstitialAd.setAdListener(new com.google.android.gms.ads.AdListener() {
+                public void onAdClosed() {
+                    myAdListener.onAdClosed();
+                    super.onAdClosed();
+                }
+
+                public void onAdFailedToLoad(int i) {
+                    super.onAdFailedToLoad(i);
+                }
+
+                public void onAdLoaded() {
+                    if (interstitialAd == null || !interstitialAd.isLoaded()) {
+                    } else {
+                        interstitialAd.show();
+                    }
+                    super.onAdLoaded();
+                }
+
+                public void onAdClicked() {
+                    myAdListener.onAdClicked();
+                    super.onAdClicked();
+                }
+
+                @Override
+                public void onAdOpened() {
+                    myAdListener.onAdOpened();
+                    super.onAdOpened();
+                }
+            });
+            interstitialAd.loadAd(build);
+        }
+    }
 
 
     public interface MyAdListener {
