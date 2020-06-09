@@ -398,7 +398,7 @@ public abstract class UIActivity extends AppCompatActivity implements View.OnCli
             case R.id.more_app:
 
                 startActivity(new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("https://play.google.com/store/apps/developer?id=KetchapPro")));
+                        Uri.parse("https://play.google.com/store/apps/developer?id=Digital+Mobile+Apps")));
 
                 break;
         }

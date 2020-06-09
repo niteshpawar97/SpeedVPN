@@ -28,8 +28,8 @@ android {
         buildConfigField "String", "STORED_CARRIER_ID_KEY", "\"com.northghost.afvclient.CARRIER_ID_KEY\""
 
         buildConfigField "String", "APP_LINK", "\"https://play.google.com/store/apps/details?id=com.vpnapp.np\""
-        buildConfigField "String", "PRIVACY_POLICY", "\"http://e-digi.com/privacy/np_vpn_privacy.html/\""
-        buildConfigField "String", "TERMS_TO_USE", "\"http://e-digi.com/privacy/np_vpn_privacy.html/\""
+        buildConfigField "String", "PRIVACY_POLICY", "\"http://e-digi.com/privacy/np_vpn_privacy.html\""
+        buildConfigField "String", "TERMS_TO_USE", "\"http://e-digi.com/privacy/np_vpn_privacy.html\""
 
         buildConfigField "Boolean", "USE_IN_APP_PURCHASE", "false"
         buildConfigField "String", "IN_APPKEY", "\"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvjZMTYA1SOuCDjpFysqS8je14R77UI++i23p88ccU7td0S+DGkr+aEiTzI3T6MolfCu1gJUUPYyIEiJ3mwRot3b3szMg2U8ZudKAI8zaW4MYgfqjns57T8DXMQpEZkRUy6f2ubL0JibYiybKs899bTPjdItrCFDNXP1y+Zd5GwHj7dLq5I3chn6Wh91+QeNhfaHGNRZNp+O38kCnLGF4pBXcXvTlyp0wV/yg+v2jfWUP1kGZcWyqyIW7FuXB1rmiJuulCq/RX1+A+NGMuJ6N5zjAuWVs+jcwxgpkV3km5kn/ATpmYOguEG9VWJuW63e8Y6L6KM/l4aTJiUPgINqDNQIDAQAB\""
