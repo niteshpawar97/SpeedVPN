@@ -213,7 +213,7 @@ public class MainActivity extends UIActivity implements TrafficListener, VpnStat
                 hideConnectProgress();
                 stopUIUpdateTask();
                LoadInterstitialAd();
-                InterstitialAd mInterstitialAd;
+                //InterstitialAd mInterstitialAd;
                 if (!preference.isBooleenPreference(Constant.PRIMIUM_STATE)) {
                     /*mInterstitialAd = new InterstitialAd(getApplicationContext());
                     mInterstitialAd.setAdUnitId(BuildConfig.GOOGLE_INTERSTITIAL);

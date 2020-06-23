@@ -11,6 +11,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.facebook.ads.AdError;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -49,6 +55,24 @@ public class SplashActivity extends AppCompatActivity {
         version.setText(getString(R.string.version) + packageInfo.versionName);
 
         preference = new Preference(SplashActivity.this);
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String urlip = "http://checkip.amazonaws.com/";
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, urlip, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                preference.setStringpreference("IP_ADDR",response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                preference.setStringpreference("IP_ADDR","00.00.00.00");
+            }
+        });
+
+        queue.add(stringRequest);
+
         preference.setStringpreference(APP_IN_PURCHASE_KEY, BuildConfig.IN_APPKEY);
         preference.setStringpreference(MONTHLY_SUB, BuildConfig.MONTHLY);
         preference.setStringpreference(SIX_MONTHS_SUB, BuildConfig.SIX_MONTH);

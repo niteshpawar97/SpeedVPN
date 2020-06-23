@@ -33,6 +33,12 @@ import com.anchorfree.sdk.UnifiedSDK;
 import com.anchorfree.vpnsdk.callbacks.Callback;
 import com.anchorfree.vpnsdk.exceptions.VpnException;
 import com.anchorfree.vpnsdk.vpnservice.VPNState;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.SkuDetails;
 import com.anjlab.android.iab.v3.TransactionDetails;
@@ -508,6 +514,7 @@ public abstract class UIActivity extends AppCompatActivity implements View.OnCli
     /**
      * Update UI according to VPN state
      */
+
     protected void updateUI() {
         UnifiedSDK.getVpnState(new Callback<VPNState>() {
             @Override
@@ -515,7 +522,7 @@ public abstract class UIActivity extends AppCompatActivity implements View.OnCli
                 switch (vpnState) {
                     case IDLE: {
                         connectionStateTextView.setText(R.string.disconnected);
-                        server_ip.setText(R.string.default_server_ip_text);
+                        server_ip.setText(preference.getStringpreference("IP_ADDR"));
                         if (connected) {
                             connected = false;
                             animate(img_connect, Ondisconnect, 0, false);

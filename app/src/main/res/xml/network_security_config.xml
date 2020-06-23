@@ -3,6 +3,7 @@
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">127.0.0.1</domain>
     <domain includeSubdomains="true">e-digi.com</domain>
+        <domain includeSubdomains="true">checkip.amazonaws.com</domain>
     </domain-config>
     <domain-config>
         <domain includeSubdomains="true">facebook.com</domain>
